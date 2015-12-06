@@ -1,12 +1,17 @@
 <form action="/updated" method="get">
-	<input type="text" name="c" value="{{dataList.name}}">
-	<input type="number" name="reps" value="{{dataList.reps}}">
-	<input type="number" name="weight" value="{{dataList.weight}}">
-	<input type="date" name="date" value="{{dataList.date}}">
-	<select name="lbs" value="{{dataList.lbs}}">
+	Name of exercise:<br>
+	<input type="text" name="c" value="{{this.name}}"><br>
+	Number of reps:<br>
+	<input type="number" name="reps" value="{{this.reps}}"><br>
+	Amount of weight:<br>
+	<input type="number" name="weight" value="{{this.weight}}"><br>
+	Date:<br>
+	<input type="date" name="date" value="{{this.date}}"><br>
+	Systame:<br>
+	<select name="lbs" value="{{this.lbs}}">
 		<option value="0">metric</option>
 		<option value="1">imperial</option>
-	</select>
-	<input type="hidden" name="id" value="{{dataList.id}}">
+	</select><br>
+	<input type="hidden" name="id" value="{{this.id}}">
 	<button>Update</button>
 </form>
