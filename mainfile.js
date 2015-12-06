@@ -92,8 +92,14 @@ app.get('/updated',function(req,res,next){
       next(err);
       return;
     }
+  });
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
     context.dataList = rows;
-    res.render('home',context);
+    res.render('home', context);
   });
 });
 
