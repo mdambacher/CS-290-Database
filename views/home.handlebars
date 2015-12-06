@@ -31,10 +31,12 @@
 	<td>{{this.weight}}</td>
 	<td>{{this.date}}</td>
 	<td>{{this.lbs}}</td>
+	<td>
     	<form action="/delete" method="get">
       		<input type="hidden" name="id" value="{{this.id}}">
       		<button>Delete Exercise</button>
     	</form>
+    	</td>
   </tr>
   {{/each}}
 </table>
