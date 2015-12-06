@@ -49,7 +49,12 @@ app.get('/insert',function(req,res,next){
       return;
     }
     //context.results = JSON.stringify(rows);
-    context.results = rows;
+    //context.results = rows;
+    var exer = [];
+    for (var i = 0; 1 < rows.length; i++) {
+      exer.push('name':rows[i].name, 'reps':rows[i].reps, 'weight':rows[i].weight, 'date':rows[i].date, 'lbs':rows[i].lbs);
+    }
+    context.results = exer;
     res.render('home', context);
   });
 });
