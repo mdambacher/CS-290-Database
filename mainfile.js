@@ -71,6 +71,32 @@ app.get('/delete', function(req,res,next){
   });
 });
 
+app.get('/update', function(req,res,next){
+  var context = {};
+  mysql.pool.query('SELECT * FROM workouts WHERE id = ?', [req.query.id], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.dataList = rows;
+    res.render('update', context);
+  });
+});
+
+app.get('/updated',function(req,res,next){
+  var context = {};
+  mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?',
+    [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs, req.query.id],
+    function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.dataList = rows;
+    res.render('home',context);
+  });
+});
+
 app.get('/',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
