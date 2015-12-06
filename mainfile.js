@@ -48,7 +48,8 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    context.results = JSON.stringify(rows);
+    //context.results = JSON.stringify(rows);
+    context.results = rows;
     res.render('home', context);
   });
 });
