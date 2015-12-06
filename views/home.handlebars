@@ -13,7 +13,6 @@
 
 <h2>Workouts</h2>
 <p>{{results}}</p>
-{{#if results}}
 <table>
 	<tr>
 		<td>Workouts</td>
@@ -25,7 +24,7 @@
 		<td>Date</td>
 		<td>LBs</td>
 	</tr>
-  {{#each results}}
+  {{#each dataList}}
   <tr>
   	<td>test</td>
     <td>{{this.name}}</td>
@@ -40,4 +39,3 @@
   </tr>
   {{/each}}
 </table>
-{{/if}}
