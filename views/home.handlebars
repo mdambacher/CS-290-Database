@@ -28,11 +28,11 @@
   {{#each results}}
   <tr>
   	<td>test</td>
-    <td>{{results."name"}}</td>
-	<td>{{results."reps"}}</td>
-	<td>{{results."weight"}}</td>
-	<td>{{results."date"}}</td>
-	<td>{{results."lbs"}}</td>
+    <td>{{results.name}}</td>
+	<td>{{results.reps}}</td>
+	<td>{{results.weight}}</td>
+	<td>{{results.date}}</td>
+	<td>{{results.lbs}}</td>
     <form method="post">
       <input type="hidden" name="id" value="{{results.id}}">
       <input type="submit" name="Done" value="Mark as Done">
