@@ -6,7 +6,7 @@
 	<select name="lbs">
 		<option value="0">metric</option>
 		<option value="1">imperial</option>
-	</select></p>
+	</select>
 	<button>Add Exercise</button>
 </form>
 
@@ -26,16 +26,15 @@
 	</tr>
   {{#each dataList}}
   <tr>
-  	<td>test</td>
-    <td>{{this.name}}</td>
+    	<td>{{this.name}}</td>
 	<td>{{this.reps}}</td>
 	<td>{{this.weight}}</td>
 	<td>{{this.date}}</td>
 	<td>{{this.lbs}}</td>
-    <form method="post">
-      <input type="hidden" name="id" value="{{this.id}}">
-      <input type="submit" name="Done" value="Mark as Done">
-    </form>
+    	<form action="/delete" method="get">
+      		<input type="hidden" name="id" value="{{this.id}}">
+      		<input type="submit" name="Done" value="Mark as Done">
+    	</form>
   </tr>
   {{/each}}
 </table>
