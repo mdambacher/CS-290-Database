@@ -52,7 +52,7 @@ app.get('/insert',function(req,res,next){
     //context.results = rows;
     var exer = [];
     for (var i = 0; 1 < rows.length; i++) {
-      exer.push('id'=rows[i].id, 'name'=rows[i].name, 'reps'=rows[i].reps, 'weight'=rows[i].weight, 'date'=rows[i].date, 'lbs'=rows[i].lbs);
+      exer.push({'id'=rows[i].id, 'name'=rows[i].name, 'reps'=rows[i].reps, 'weight'=rows[i].weight, 'date'=rows[i].date, 'lbs'=rows[i].lbs});
     }
     context.results = exer;
     res.render('home', context);
