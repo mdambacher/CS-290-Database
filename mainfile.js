@@ -48,17 +48,28 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    //context.results = JSON.stringify(rows);
-    //context.results = rows;
-    //var exer = [];
-    //for (var i = 0; 1 < rows.length; i++) {
-      //exer.push({'id':rows[i].id, 'name':rows[i].name, 'reps':rows[i].reps, 'weight':rows[i].weight, 'date':rows[i].date, 'lbs':rows[i].lbs});
-    //}
     context.dataList = rows;
     res.render('home', context);
   });
 });
 
+app.get('/delete', function(req,res,next){
+  var context = {};
+  mysql.pool.query("DELETE FROM workouts WHERE id = ?", [req.query.id], function(err,result){
+    if(err){
+      next(err);
+      return;
+    }  
+  });
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    context.dataList = rows;
+    res.render('home', context);
+  });
+})
 
 app.get('/',function(req,res,next){
   var context = {};
