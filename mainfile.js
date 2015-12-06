@@ -54,7 +54,7 @@ app.get('/insert',function(req,res,next){
     for (var i = 0; 1 < rows.length; i++) {
       exer.push({'id':rows[i].id, 'name':rows[i].name, 'reps':rows[i].reps, 'weight':rows[i].weight, 'date':rows[i].date, 'lbs':rows[i].lbs});
     }
-    context.results = exer;
+    context.dataList = exer;
     res.render('home', context);
   });
 });
