@@ -78,7 +78,7 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
-    context.results = JSON.stringify(rows);
+    context.dataList = rows;
     res.render('home', context);
   });
 });
